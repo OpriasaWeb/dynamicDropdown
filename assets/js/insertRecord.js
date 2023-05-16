@@ -10,23 +10,21 @@ $(document).ready(function(){
 
         var fname= $('#firstname').val();
         
-        var ddrss = $('#address').val();
-        var islandName = $('select[name="slnd"] option:selected').text();
-        var regionName = $('select[name="rgn"] option:selected').text();
-        var provinceName = $('select[name="prvnc"] option:selected').text();
-        var cityName = $('select[name="ct"] option:selected').text();
-        var barangayName = $('select[name="brgy"] option:selected').text();
-
         // Insert account
         var fullname = fname + " " + lname;
         var status= $('#status').val();
 
         // Insert accountdetails
-        var full_address = ddrss + ", " + barangayName + ", " + cityName + ", " + provinceName + ", " + regionName + ", " + islandName;
+        var islandName = $('select[name="slnd"] option:selected').text();
+        var regionName = $('select[name="rgn"] option:selected').text();
+        var provinceName = $('select[name="prvnc"] option:selected').text();
+        var cityName = $('select[name="ct"] option:selected').text();
+        var barangayName = $('select[name="brgy"] option:selected').text();
+        var ddrss = $('#address').val();
         var gender = $('#gender').val();
+        // var full_address = ddrss + ", " + barangayName + ", " + cityName + ", " + provinceName + ", " + regionName + ", " + islandName;
 
-
-        console.log(fullname, status, full_address, gender);
+        // console.log(fullname, status, full_address, gender);
 
         if(fullname !== ''){
             $.ajax({
@@ -36,7 +34,12 @@ $(document).ready(function(){
                     insert: true,
                     fullname: fullname,
                     status: status,
-                    full_address: full_address,
+                    island_name: islandName,
+                    region_name: regionName,
+                    province_name: provinceName,
+                    city_name: cityName,
+                    barangay_name: barangayName,
+                    street: ddrss,
                     gender: gender
                 },
                 success: function(res){

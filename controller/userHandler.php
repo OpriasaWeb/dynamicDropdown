@@ -14,7 +14,12 @@ if(isset($_POST['insert'])){
   try{
 
     if(empty($_POST['fullname']) || empty($_POST['status']) 
-      || empty($_POST['full_address']) 
+      || empty($_POST['island_name'])
+      || empty($_POST['region_name'])
+      || empty($_POST['province_name'])
+      || empty($_POST['city_name'])
+      || empty($_POST['barangay_name'])
+      || empty($_POST['street'])
       || empty($_POST['gender'])){
       echo "Cannot be empty. Please fill-in everything.";
       return;
@@ -25,7 +30,12 @@ if(isset($_POST['insert'])){
       $status = $_POST['status'];
 
       // Insert accountdetails
-      $full_address = $_POST['full_address'];
+      $island_name = $_POST['island_name'];
+      $region_name = $_POST['region_name'];
+      $province_name = $_POST['province_name'];
+      $city_name = $_POST['city_name'];
+      $barangay_name = $_POST['barangay_name'];
+      $street = $_POST['street'];
       $gender = $_POST['gender'];
 
       // Debug
@@ -33,7 +43,11 @@ if(isset($_POST['insert'])){
 
       // From controller back to view
       $insertedAccount = $userController->insertAccount($fullname, $status);
-      $insertedAccountDetails = $userController->insertAccountDetails($full_address, $gender);
+      $insertedAccountDetails = $userController->insertAccountDetails($island_name, $region_name, $province_name, $city_name, $barangay_name, $street, $gender);
+
+      echo json_encode($insertedAccount);
+
+      echo json_encode($insertedAccountDetails);
       
       if(!$insertedAccount && $insertedAccountDetails){
         echo "
