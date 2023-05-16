@@ -1,5 +1,7 @@
 <?php
 include '../model/user.class.php';
+include '../model/account.class.php';
+include '../model/accountdetails.class.php';
 
 
 class userController{
