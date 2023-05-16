@@ -63,15 +63,15 @@ class userController{
   // ------------------------------------------------------------- // 
 
   // DELETE
-  // public function deleteAccountRecord($id){
-  //   $deleteAccountRecord = $this->userRecord->deleteAccountRecord($id);
-  //   return $deleteAccountRecord;
-  // }
+  public function deleteAccountRecord($id){
+    $deleteAccountRecord = $this->accountRecord->deleteAccountRecord($id);
+    return $deleteAccountRecord;
+  }
 
-  // public function deleteAccountDetailsRecord($id){
-  //   $deleteAccountDetailsRecord = $this->userRecord->deleteAccountDetailsRecord($id);
-  //   return $deleteAccountDetailsRecord;
-  // }
+  public function deleteAccountDetailsRecord($id){
+    $deleteAccountDetailsRecord = $this->accountDetailsRecord->deleteAccountDetailsRecord($id);
+    return $deleteAccountDetailsRecord;
+  }
 
   // DELETE
 

@@ -197,9 +197,11 @@ function displayData(){
       dialog.close();
       openCheck(dialog);
 
-      setTimeout(function() {
-        location.reload(true);
-      }, 100);
+      window.location.href = "http://localhost/mvc_project/index.php?module=home&action=showall";
+
+      // setTimeout(function() {
+      //   location.reload(true);
+      // }, 100);
     });
 
     // Dialog pop
