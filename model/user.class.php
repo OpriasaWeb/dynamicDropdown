@@ -31,9 +31,9 @@ class user{
   }
 
   // Insert account details model
-  public function insertAccountDetails($address, $gender){
+  public function insertAccountDetails($island, $region, $province, $city, $barangay, $street, $gender){
     try{
-      $statement = $this->local->prepare("INSERT INTO tutorial.accountdetails(address, gender) VALUES ('$address', '$gender')");
+      $statement = $this->local->prepare("INSERT INTO tutorial.accountdetails(island, region, province, city, barangay, street, gender) VALUES ('$island', '$region', '$province', '$city', '$barangay', '$street','$gender')");
       $statement->execute();
       echo message::INSERTED_SUCCESSFULLY;
     } catch(PDOException $e){
@@ -85,10 +85,10 @@ class user{
         $query = "SELECT id, name, status FROM tutorial.account WHERE id = $id";
         $statement = $this->local->prepare($query);
         $statement->execute();
-        $data = $statement->fetch(PDO::FETCH_ASSOC);
+        $data = $statement->fetchAll(PDO::FETCH_ASSOC);
         // print_r($data);
         // return json_encode($data);
-        return $data;        
+        return $data;
         // return $statement;
     }catch(PDOException $e){
         throw $e;

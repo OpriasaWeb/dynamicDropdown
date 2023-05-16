@@ -28,7 +28,12 @@ $localaddress->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         <tr>
           <th>No#</th>
           <th>Name</th>
-          <th>Address</th>
+          <th>Island</th>
+          <th>Region</th>
+          <th>Province</th>
+          <th>City</th>
+          <th>Barangay</th>
+          <th>Street</th>
           <th>Status</th>
           <th>Action</th>
         </tr>
@@ -41,7 +46,12 @@ $localaddress->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
           <th><?php echo $key + 1 ?></th>
           <td><?php echo $u['name'] ?></td>
-          <td><?php echo $u['address'] ?></td>
+          <td><?php echo $u['island'] ?></td>
+          <td><?php echo $u['region'] ?></td>
+          <td><?php echo $u['province'] ?></td>
+          <td><?php echo $u['city'] ?></td>
+          <td><?php echo $u['barangay'] ?></td>
+          <td><?php echo $u['street'] ?></td>
           <td><?php echo $u['status'] ?></td>
           <td>
             <button value="<?php echo $u['id']; ?>" data-id="<?php echo $u['id']; ?>" id="modalEdit" name="edit" class="postEdit btn btn-sm btn-outline-primary">Edit</button>
