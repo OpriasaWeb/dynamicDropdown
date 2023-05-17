@@ -12,6 +12,9 @@ $userController = new userController();
 if(isset($_POST['insert'])){
 
   try{
+    
+    $nameRegex = '/^[A-Za-z \'-]{2,50}$/';
+    $addressRegex = '/^[A-Za-z0-9 .,#\'-]{2,100}$/';
 
     if(empty($_POST['fullname']) || empty($_POST['status']) 
       || empty($_POST['island_name'])
@@ -23,7 +26,14 @@ if(isset($_POST['insert'])){
       || empty($_POST['gender'])){
       echo "Cannot be empty. Please fill-in everything.";
       return;
-    } else{
+    } 
+    // const nameRegex = /^[A-Za-z '-]{2,50}$/;
+    else if(!preg_match($nameRegex, $_POST['fullname']) || !preg_match($addressRegex, $_POST['street'])){
+      echo "Kindly recheck the lastname, firstname or address if valid input.";
+      return;
+    }
+    
+    else{
 
       // Insert accounts
       $fullname = $_POST['fullname'];

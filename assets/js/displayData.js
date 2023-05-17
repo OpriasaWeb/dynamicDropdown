@@ -164,19 +164,19 @@ function displayData(){
     resultIsland.innerText = "Valid input";
   }
   // If birthdate left no value
-  if(birthdateValue.trim() === ''){
-    resultBirthdate.style.fontWeight = 'bold';
-    resultBirthdate.style.color = 'red';
-    resultBirthdate.innerText = "* required";
-    // If any of these if empty
-    alert("Birthdate should not be empty.");
-    return false;
-  }
+  // if(birthdateValue.trim() === ''){
+  //   resultBirthdate.style.fontWeight = 'bold';
+  //   resultBirthdate.style.color = 'red';
+  //   resultBirthdate.innerText = "* required";
+  //   // If any of these if empty
+  //   alert("Birthdate should not be empty.");
+  //   return false;
+  // }
 
   if(!regex.test(lnameValue) || !regex.test(fnameValue) || !addressRegex.test(addressValue)){
     // if any of these is false
     alert("Kindly recheck the lastname, firstname or address if valid input.");
-    return;
+    return false;
   }
   // If no error, show the popup created user
   else{

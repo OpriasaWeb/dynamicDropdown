@@ -35,14 +35,16 @@ $local->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     <div class="container-input">
       <div class="mb-3">
         <label for="" class="form-label">Lastname <span class="limitation">(Only letters, period and space are allowed)</span></label>
+        <span id="resultLname">* required</span>
         <input type="text" name="lname" id="lastname" class="form-control" maxlength="32" minlength="2" onInput="getLname()" required> 
-        <span id="resultLname"></span>
+        
         <!-- pattern="^[^~!$%^?]$" title="Only the letters, period and space are allowed." -->
       </div>
       <div class="mb-3">
         <label for="" class="form-label">Firstname <span class="limitation">(Only letters, period and space are allowed)</span></label>
+        <span id="resultFname">* required</span>
         <input type="text" name="fname"  id="firstname" class="form-control" maxlength="32" minlength="2" onInput="getFname()" required>
-        <span id="resultFname"></span></span>
+        
         <!-- pattern=^[^~!$%^?]$" title="Only the letters, period and space are allowed." -->
       </div>
       <p class="fs-5 text-bold">Address</p>
@@ -52,9 +54,8 @@ $local->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       <input type="hidden" name="status" id="status" value="active">
 
       <label for="island">Island</label>
-      <!-- <span id="resultIsland"><?php echo $requiredMessage ?></span> -->
-      <span id="resultIsland"></span>
-      <select id="island" name="slnd" class="reset form-select mb-3">
+      <span id="resultIsland">* required</span>
+      <select id="island" name="slnd" class="reset form-select mb-3" onChange="getIsland()">
         <option value="" selected disabled>Select an island...</option>
 
         <!-- Fetching island from database using while loop -->
@@ -80,57 +81,60 @@ $local->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       
 
       <label for="region">Region</label>
-      <span id="resultRegion"></span></span>
-      <select class="reset form-select mb-3" name="rgn" id="region" placeholder="Select region...">
+      <span id="resultRegion">* required</span>
+      <select class="reset form-select mb-3" name="rgn" id="region" placeholder="Select region..." onChange="getRegion()">
         <option disabled>Select region...</option>
       </select>
       
 
       <label for="province">Province</label>
-      <span id="resultProvince"></span></span>
-      <select class="reset province form-select mb-3" name="prvnc" id="province">
+      <span id="resultProvince">* required</span>
+      <select class="reset province form-select mb-3" name="prvnc" id="province" onChange="getProvince()">
         <option disabled>Select province...</option>
       </select>
       
 
       <label for="city">City</label>
-      <span id="resultCity"></span></span>
-      <select class="reset form-select mb-3" name="ct" id="city">
+      <span id="resultCity">* required</span>
+      <select class="reset form-select mb-3" name="ct" id="city" onChange="getCity()">
         <option disabled>Select city...</option>
       </select>
       
 
       <label for="barangay">Barangay</label>
-      <span id="resultBarangay"></span></span>
-      <select class="reset form-select mb-3" name="brgy" id="barangay">
+      <span id="resultBarangay">* required</span>
+      <select class="reset form-select mb-3" name="brgy" id="barangay" onChange="getBarangay()">
         <option disabled>Select barangay...</option>
       </select>
       
 
       <div class="mb-3">
         <label for="" class="form-label">Bldg/Blk/Lot/Subd</label>
+        <span id="resultAddress">* required</span>
         <input type="text" onInput="addressInput()" name="ddrss" id="address" class="address form-control">
         <!-- pattern="^[a-zA-Z0-9\s,'-]*$" title="!, $, %, ^ are not allowed" -->
-        <span id="resultAddress"></span></span>
+        
         
       </div>
 
       <div class="mb-3">
         <label for="" class="form-label">Gender</label>
-        <select id="gender" name="gndr" class="gender form-select" aria-label="Default select example">
+        <span id="resultGender">* required</span>
+        <select id="gender" name="gndr" class="gender form-select" aria-label="Default select example" onChange="getGender()">
           <option value="">Choose...</option>
           <option value="male">Male</option>
           <option value="female">Female</option>
         <!-- <option value="No">I'd rather not to say</option> -->
         </select>
-        <span id="resultGender"></span></span>
+        
         
       </div>
 
       <div class="mb-3">
         <label>Birthdate <span class="limitation">(21 above are allowed)</span></label>
+        <span id="resultBirthdate">Optional</span>
         <input type="text" name="birthdate" id="datepicker" class="birthdate form-control" placeholder="Date..">
-        <span id="resultBirthdate"></span></span>
+        
       </div>
 
       <div class="form-group">
@@ -224,11 +228,11 @@ $local->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // ---------------------------------------------------------- //
 
-    // Reset click
+    // Reset required message
     <?php 
-        include(APPROOT.'/assets/js/resetClick.js'); 
+        include(APPROOT.'/assets/js/requiredMessage.js'); 
     ?>
-    // Reset click
+    // Reset required message
 
     // ---------------------------------------------------------- //
     

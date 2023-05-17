@@ -115,7 +115,12 @@ input.pattern{
 /* ----------------------------------------------------------- */
 
 /* Error required message */
-#resultLname, #resultFname, #resultBirthdate, #resultGender, #resultAddress, #resultBarangay, #resultCity, #resultProvince, #resultRegion, #resultIsland{
+#resultBirthdate{
+  color: green !important;
+  float: right;
+}
+
+#resultLname, #resultFname, #resultGender, #resultAddress, #resultBarangay, #resultCity, #resultProvince, #resultRegion, #resultIsland{
   color: red;
   float: right;
   /* font-weight: bold; */
