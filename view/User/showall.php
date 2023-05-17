@@ -6,12 +6,11 @@ require_once("./config/messages.php");
 $localaddress = new PDO(DSNA, DBUSERA, DBPASSA);
 $localaddress->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+include (APPROOT.'/view/header.php');
+
 ?>
 
 <!-- Include header -->
-<?php
-    include (APPROOT.'/view/header.php');
-?>
 <!-- Include header -->
 
 
@@ -23,7 +22,7 @@ $localaddress->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     
 
-    <table id="dataTable" class="table table-hover border-dark">
+    <table id="dbtable" class="table table-hover border-dark">
       <thead>
         <tr>
           <th>No#</th>
@@ -246,9 +245,10 @@ $localaddress->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // DataTables
     $(document).ready(function () {
-      $('#dataTable').DataTable();
+      $('#dbtable').DataTable({
+      });
     });
-    // DataTables
+
 
     // ------------------------------------------------------- // 
 

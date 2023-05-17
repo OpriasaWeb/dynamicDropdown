@@ -13,7 +13,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <!-- jqGrid 4.1.1 -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqgrid/5.8.2/js/jquery.jqGrid.min.js" integrity="sha512-MMPWQuKgra1rVM2EEgZDWD3ZKmaNALAfKEb+zgkDgET/AS8bCWecd12zqYWoYQ+gpBqoIebb4k/686xHO4YkLQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jqgrid/5.8.2/js/jquery.jqGrid.min.js" integrity="sha512-MMPWQuKgra1rVM2EEgZDWD3ZKmaNALAfKEb+zgkDgET/AS8bCWecd12zqYWoYQ+gpBqoIebb4k/686xHO4YkLQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
   
   <!-- <script src="https://cdn.jsdelivr.net/npm/jqgrid@4.6.4/plugins/grid.postext.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jqgrid@4.6.4/css/ui.jqgrid.min.css"> -->
@@ -21,6 +21,15 @@
 
   <!-- jQuery AJAX -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+  <!-- DataTables -->
+  <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" /> -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" />
+  
+  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+  <!-- DataTables -->
 
   <!-- jQuery UI CSS -->
   <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
@@ -31,13 +40,7 @@
   <!-- Local CSS -->
   <link rel="stylesheet" href="./assets/css/styles.css">
 
-  <!-- DataTables -->
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
-  
-  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-  <!-- DataTables -->
+
 
   <!-- Boxicons icon -->
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
