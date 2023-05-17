@@ -22,7 +22,7 @@ $(document).ready(function(){
         $("#city").empty();
         $("#barangay").empty();
         
-        $('#region').append($('<option disabled selected>').text("Select region..."));
+        $('#region').append($('<option>').text("Select region...").attr('selected', 'disabled'));
         $.each(data, function(i, val) {
           $('#region').append($('<option>', {text: val.region_name, value: val.region_id}));
           // $('#region').append($('<option').text(val.region_name).val(region_id));
@@ -51,7 +51,7 @@ $(document).ready(function(){
         $("#city").empty();
         $("#barangay").empty();
 
-        $('#province').append($('<option disabled selected>').text("Select province..."));
+        $('#province').append($('<option>').text("Select province...").attr('selected', 'disabled'));
         
         $.each(data, function(i, val) {
           $('#province').append($('<option>', {text: val.province_name, value: val.province_id}));
@@ -78,7 +78,7 @@ $(document).ready(function(){
         $("#city").empty();
         $("#barangay").empty();
 
-        $('#city').append($('<option disabled selected>').text("Select city..."));
+        $('#city').append($('<option>').text("Select city...").attr('selected', 'disabled'));
         $.each(data, function(i, val) {
           $('#city').append($('<option>', {text: val.city_name, value: val.city_id}));
           // $('#province').append($('<option>').text(val.province_name).val(province_id));
@@ -102,7 +102,7 @@ $(document).ready(function(){
       success:function(data){
         $("#barangay").empty();
 
-        $('#barangay').append($('<option disabled selected>').text("Select barangay..."));
+        $('#barangay').append($('<option>').text("Select barangay...").attr('selected', 'disabled'));
         $.each(data, function(i, val) {
           $('#barangay').append($('<option>', {text: val.barangay_name, value: val.barangay_id}));
           // $('#province').append($('<option>').text(val.province_name).val(province_id));

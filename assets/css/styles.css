@@ -103,12 +103,22 @@ input.pattern{
 
 /* Error message display modal */
 
+#fullnameValidation{
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px; 
+}
+
 /* ----------------------------------------------------------- */
 
 /* Error required message */
 #resultLname, #resultFname, #resultBirthdate, #resultGender, #resultAddress, #resultBarangay, #resultCity, #resultProvince, #resultRegion, #resultIsland{
   color: red;
   float: right;
+  /* font-weight: bold; */
 }
 /* Error required message */
 

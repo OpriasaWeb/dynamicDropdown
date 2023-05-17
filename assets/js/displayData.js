@@ -79,52 +79,55 @@ function displayData(){
 
   // If island left no value
   if(islandValue === ""){
-    resultIsland.style.fontWeight = 'bold';
-    resultIsland.style.color = 'red';
-    resultIsland.innerText = "* required";
     // If any of these if empty
     alert("Island should not be empty.");
     return false;
-    // if(!islandValue == ""){
-    //   resultIsland.innerText = "";
-    // }
-    // return;  
-  } 
+  } else{
+    resultIsland.display = "none";
+  }
   // If region left no value
-  if(regionValue === ""){
+  if(regionValue === "Select region..."){
     resultRegion.style.fontWeight = 'bold';
     resultRegion.style.color = 'red';
     resultRegion.innerText = "* required";
     // If any of these if empty
     alert("Region should not be empty.");
     return false;
+  } else{
+    resultRegion.display = "none";
   }
   // If province left no value
-  if(provinceValue === ""){
+  if(provinceValue === "Select province..."){
     resultProvince.style.fontWeight = 'bold';
     resultProvince.style.color = 'red';
     resultProvince.innerText = "* required";
     // If any of these if empty
     alert("Province should not be empty.");
     return false;
+  } else{
+    resultProvince.display = "none";
   }
   // If city left no value
-  if(cityValue === ""){
+  if(cityValue === "Select city..."){
     resultCity.style.fontWeight = 'bold';
     resultCity.style.color = 'red';
     resultCity.innerText = "* required";
     // If any of these if empty
     alert("City should not be empty.");
     return false;
+  } else{
+    resultCity.display = "none";
   }
   // If barangay left no value
-  if(barangayValue === ""){
+  if(barangayValue === "Select barangay..."){
     resultBarangay.style.fontWeight = 'bold';
     resultBarangay.style.color = 'red';
     resultBarangay.innerText = "* required";
     // If any of these if empty
     alert("Barangay should not be empty.");
     return false;
+  } else{
+    resultBarangay.display = "none";
   }
 
   // If address left no value
@@ -134,7 +137,11 @@ function displayData(){
     resultAddress.innerText = "* required";
     alert("Address should not be empty.");
     return;
-  } 
+  } else{
+    resultIsland.style.fontWeight = 'bold';
+    resultIsland.style.color = 'green';
+    resultIsland.innerText = "Valid input";
+  }
 
   // If gender left no value
   var allowedValues = ['male', 'female'];
@@ -151,6 +158,10 @@ function displayData(){
     // If the user value is not in the allowed ENUM values, show an error message
     alert("Gender is required.");
     return;
+  } else{
+    resultIsland.style.fontWeight = 'bold';
+    resultIsland.style.color = 'green';
+    resultIsland.innerText = "Valid input";
   }
   // If birthdate left no value
   if(birthdateValue.trim() === ''){
@@ -264,3 +275,13 @@ function displayData(){
   }
 }
 // Form button display data
+
+// Island
+
+// Region
+
+// Province
+
+// City
+
+// Barangay
