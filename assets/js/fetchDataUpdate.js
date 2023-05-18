@@ -47,23 +47,23 @@ $(document).ready(function(){
         fetchId: id
       },
       success: function(response) {
+        
+        console.log(response);
+
         const responseObject = JSON.parse(response);
-        // console.log(responseObject);
+        console.log(responseObject);
         
         var accountId = responseObject.account.id;
         var accountName = responseObject.account.name;
         var accountStatus = responseObject.account.status;
-        var accountAddress = responseObject.accountDetails.address;
+        var accountGender = responseObject.accountDetails.gender;
+        var accountStreet = responseObject.accountDetails.street;
 
-        console.log(accountId, accountName, accountStatus, accountAddress);
-
-        var splitAddress = accountAddress.split(",");
-
-        for(let i = 0; i < splitAddress.length; i++){
-          console.log(splitAddress[i]);
-        }
-
-        console.log(splitAddress[5]);
+        var accountBarangay = responseObject.accountDetails.barangay;
+        var accountCity = responseObject.accountDetails.city;
+        var accountProvince = responseObject.accountDetails.province;
+        var accountRegion = responseObject.accountDetails.region;
+        var accountIsland = responseObject.accountDetails.island;
 
         if (accountStatus === 'active') {
           $('#spanStatus').addClass('active-status');
@@ -73,12 +73,47 @@ $(document).ready(function(){
 
         $('#id').val(accountId);
         $('#fullname').val(accountName);
-        // $('#street').val(splitAddress[0]);
-        $('#street').attr('placeholder', splitAddress[0]);
+
+        $('#gender').val(accountGender);
+
+        $('#island').val(accountIsland);
+        populateRegion(accountRegion);
+
+        function populateRegion(accountRegion){
+          var regions = [
+            { id: 1, name: 'Region 1' },
+            { id: 2, name: 'Region 2' },
+            // ...
+          ];
+        }
+
+        var regionSelect = $('#region');
+        regionSelect.empty();
+
+        $('#street').val(accountStreet);
+        $('#barangay').attr('placeholder', accountBarangay);
+        $('#city').val(accountCity);
+        $('#province').val(accountProvince);
+        $('#region').val(accountRegion);
+        // $('#island').val(accountIsland);
+        
         $('#spanStatus').text(accountStatus);
         $('#status').val(accountStatus);
 
         // ---------- TEST and DEBUGGING (Complete address update) if sir asks  ---------- //
+
+        // $('#street').val(splitAddress);
+        // $('#street').attr('placeholder', splitAddress[0]);
+
+        // console.log(accountId, accountName, accountStatus, accountAddress);
+
+        // var splitAddress = accountAddress.split(",");
+
+        // for(let i = 0; i < splitAddress.length; i++){
+        //   console.log(splitAddress[i]);
+        // }
+
+        // console.log(splitAddress[5]);
 
         // $('#barangay').val(splitAddress[1]);
         // $('#city').val(splitAddress[2]);

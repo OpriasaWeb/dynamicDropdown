@@ -34,7 +34,6 @@ if(isset($_POST['insert'])){
     }
     
     else{
-
       // Insert accounts
       $fullname = $_POST['fullname'];
       $status = $_POST['status'];
@@ -90,6 +89,16 @@ if(isset($_POST['updateData'])){
     $id = $_POST['id'];
     $fullname = $_POST['fullname'];
     // $address = $_POST['address'];
+
+    // Insert accountdetails
+    // $island_name = $_POST['island_name'];
+    // $region_name = $_POST['region_name'];
+    // $province_name = $_POST['province_name'];
+    // $city_name = $_POST['city_name'];
+    // $barangay_name = $_POST['barangay_name'];
+    
+    $street = $_POST['street'];
+    $gender = $_POST['gender'];
     $status = $_POST['status'];
 
     print_r($_POST);
@@ -97,10 +106,11 @@ if(isset($_POST['updateData'])){
     $updateAccount = $userController->editAccountRecord($id, $fullname, $status);
 
     // ---------- TEST and DEBUGGING (Complete address update) if sir ask  ---------- //
-
-    // $updateAccountDetails = $insertController->editAccountDetailsRecord($id, $address);
-
+    $updateAccountDetails = $userController->editAccountDetailsRecord($id, $street, $gender);
     // ---------- TEST and DEBUGGING (Complete address update) if sir ask  ---------- //
+
+    echo json_encode($updateAccount);
+    echo json_encode($updateAccountDetails);
 
   } catch(PDOException $e){
     throw $e;

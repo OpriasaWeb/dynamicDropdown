@@ -126,8 +126,6 @@ $local->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
           <option value="female">Female</option>
         <!-- <option value="No">I'd rather not to say</option> -->
         </select>
-        
-        
       </div>
 
       <div class="mb-3">

@@ -87,85 +87,82 @@ include (APPROOT.'/view/header.php');
 
           <!-- ---------- TEST and DEBUGGING (Complete address update) if sir ask ---------- -->
 
-          <div class="accordion accordion-flush" id="accordionFlushExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                  Change address?
-                </button>
-              </h2>
-              <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">
-                  <div id="mb-2">
-                    <label for="island">Island</label>
-                    <!-- <span id="resultIsland"><?php echo $requiredMessage ?></span> -->
-                    <span id="resultIsland"></span>
-                    <select id="island" name="slnd" class="reset form-select mb-3">
-                      <option value="" selected disabled>Select an island...</option>
+          <div id="mb-2">
+            <label for="island">Island</label>
+            <!-- <span id="resultIsland"><?php echo $requiredMessage ?></span> -->
+            <span id="resultIsland"></span>
+            <select id="island" name="slnd" class="reset form-select mb-3">
+              <option value="" selected disabled>Select an island...</option>
 
-                      <!-- Fetching island from database using while loop -->
-                      <?php
-                        // $pwconn = $localdb->pwcconn();
-                        // fetching island data from db
-                        $islandData = "SELECT * FROM address.island";
-                        $island_stmt = $localaddress->query($islandData);
+              <!-- Fetching island from database using while loop -->
+              <?php
+                // $pwconn = $localdb->pwcconn();
+                // fetching island data from db
+                $islandData = "SELECT * FROM address.island";
+                $island_stmt = $localaddress->query($islandData);
 
-                        $island_stmt->execute();
-                        // var_dump($islandData);
-                        // echo $island;
-                        while($island = $island_stmt->fetch(PDO::FETCH_ASSOC)){
-                      ?>
-                        <option value="<?php echo htmlspecialchars($island['island_id'])?>"><?php echo htmlspecialchars($island['island_name'])?></option>
-                      <?php
-                        }
-                      ?>
-                        
-                      <!-- Fetching island from database using while loop -->
-                      
-                    </select>
-                  </div>
+                $island_stmt->execute();
+                // var_dump($islandData);
+                // echo $island;
+                while($island = $island_stmt->fetch(PDO::FETCH_ASSOC)){
+              ?>
+                <option value="<?php echo htmlspecialchars($island['island_id'])?>"><?php echo htmlspecialchars($island['island_name'])?></option>
+              <?php
+                }
+              ?>
+                
+              <!-- Fetching island from database using while loop -->
+              
+            </select>
+          </div>
 
-                  <div class="mb-2">
-                  <label for="region">Region</label>
-                    <span id="resultRegion"></span></span>
-                    <select class="reset form-select mb-3" name="rgn" id="region" placeholder="Select region...">
-                      <option disabled>Select region...</option>
-                    </select>
-                  </div>
+          <div class="mb-2">
+          <label for="region">Region</label>
+            <span id="resultRegion"></span></span>
+            <select class="reset form-select mb-3" name="rgn" id="region" placeholder="Select region...">
+              <option disabled>Select region...</option>
+            </select>
+          </div>
 
-                  <div class="mb-2">
-                    <label for="province">Province</label>
-                    <span id="resultProvince"></span></span>
-                    <select class="reset province form-select mb-3" name="prvnc" id="province">
-                      <option disabled>Select province...</option>
-                    </select>
-                  </div>
+          <div class="mb-2">
+            <label for="province">Province</label>
+            <span id="resultProvince"></span></span>
+            <select class="reset province form-select mb-3" name="prvnc" id="province">
+              <option disabled>Select province...</option>
+            </select>
+          </div>
 
-                  <div class="mb-2">
-                    <label for="city">City</label>
-                    <span id="resultCity"></span></span>
-                    <select class="reset form-select mb-3" name="ct" id="city">
-                      <option disabled>Select city...</option>
-                    </select>
-                  </div>
+          <div class="mb-2">
+            <label for="city">City</label>
+            <span id="resultCity"></span></span>
+            <select class="reset form-select mb-3" name="ct" id="city">
+              <option disabled>Select city...</option>
+            </select>
+          </div>
 
-                  <div class="mb-2">
-                    <label for="barangay">Barangay</label>
-                    <span id="resultBarangay"></span></span>
-                    <select class="reset form-select mb-3" name="brgy" id="barangay">
-                      <option disabled>Select barangay...</option>
-                    </select>
-                  </div>
+          <div class="mb-2">
+            <label for="barangay">Barangay</label>
+            <span id="resultBarangay"></span></span>
+            <select class="reset form-select mb-3" name="brgy" id="barangay">
+              <option disabled>Select barangay...</option>
+            </select>
+          </div>
 
-                  <div class="mb-2">
-                    <label for="" class="form-label">Bldg/Blk/Lot/Subd</label>
-                    <input type="text" name="street" id="street" class="form-control" maxlength="32" minlength="2" onInput="editCompleteAddress()" > 
-                    <span id="validationCompleteAddress"></span>
-                    <!-- pattern="^[^~!$%^?]$" title="Only the letters, period and space are allowed." -->
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="mb-2">
+            <label for="" class="form-label">Bldg/Blk/Lot/Subd</label>
+            <input type="text" name="street" id="street" class="form-control" maxlength="32" minlength="2" onInput="editCompleteAddress()" > 
+            <span id="validationCompleteAddress"></span>
+            <!-- pattern="^[^~!$%^?]$" title="Only the letters, period and space are allowed." -->
+          </div>
+
+          <div class="mb-2">
+            <label for="gender">Gender</label>
+            <span id="resultGender"></span></span>
+            <select class="reset form-select mb-3" name="gender" id="gender">
+              <option disabled>Update gender...</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
           </div>
 
           <!-- ---------- TEST and DEBUGGING (Complete address update) if sir ask  ---------- -->

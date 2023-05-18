@@ -32,31 +32,30 @@ class userController{
   // ------------------------------------------------------------- // 
 
   // UPDATE/EDIT
-  // public function editAccountRecord($id, $fullname, $status){
-  //   $editAccountRecord = $this->userRecord->editAccountRecord($id, $fullname, $status);
-  //   return $editAccountRecord;
-  // }
+  public function editAccountRecord($id, $fullname, $status){
+    $editAccountRecord = $this->accountRecord->editAccountRecord($id, $fullname, $status);
+    return $editAccountRecord;
+  }
 
-  // public function editAccountDetailsRecord($id, $address){
-  //   $editAccountDetailsRecord = $this->userRecord->editAccountDetailsRecord($id, $address);
-  //   return $editAccountDetailsRecord;
-  // }
+  public function editAccountDetailsRecord($id, $street, $gender){
+    $editAccountDetailsRecord = $this->accountDetailsRecord->editAccountDetailsRecord($id, $street, $gender);
+    return $editAccountDetailsRecord;
+  }
   // UPDATE/EDIT
 
   // ------------------------------------------------------------- // 
 
   // SELECT FOR UPDATE
 
-  // public function selectAccount($id){
-  //   $selectAccount = $this->userRecord->selectAccount($id);
-  //   return $selectAccount;
-  // }
+  public function selectAccount($id){
+    $selectAccount = $this->accountRecord->selectAccount($id);
+    return $selectAccount;
+  }
 
-  // public function selectAccountDetails($id){
-    
-  //   $selectAccountDetails = $this->userRecord->selectAccountDetails($id);
-  //   return $selectAccountDetails;
-  // }
+  public function selectAccountDetails($id){
+    $selectAccountDetails = $this->accountDetailsRecord->selectAccountDetails($id);
+    return $selectAccountDetails;
+  }
 
   // SELECT FOR UPDATE
 

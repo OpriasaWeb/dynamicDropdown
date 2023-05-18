@@ -11,7 +11,11 @@ $(document).ready(function(){
     
     var id = $('#id').val();
     var fullname = $('#fullname').val();
+    var street = $('#street').val();
     var status = $('select[name="status"] option:selected').val();
+    var gender = $('select[name="gender"] option:selected').val();
+
+
     var regexfName = /^[a-zA-Z.\s]*$/;
 
     if(!fullname.match(regexfName)){
@@ -74,13 +78,15 @@ $(document).ready(function(){
         updateData: true,
         id: id,
         fullname: fullname,
+        gender: gender,
+        street: street,
         // fullAddress: full_address,
         status: status
       },
       success: function(response){
         console.log(response);
         editDialog.close();
-        reloadPage();
+        // reloadPage();
         // return false;
         // window.location.href = "http://localhost/mvc_project/index.php?module=home&action=showall";
       },

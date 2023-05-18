@@ -12,7 +12,7 @@ class accountdetails{
 
   public function selectAccountDetails($id){
     try{
-      $query = "SELECT account_id, address FROM tutorial.accountdetails WHERE account_id = $id";
+      $query = "SELECT account_id, gender, street, barangay, city, province, region, island FROM tutorial.accountdetails WHERE account_id = $id";
       $statement = $this->local->prepare($query);
       $statement->execute();
       $data = $statement->fetch(PDO::FETCH_ASSOC);
@@ -43,11 +43,12 @@ class accountdetails{
   // --------------------------------------------------------------- //
 
   // Edit/Update account details model
-  public function editAccountDetailsRecord($id, $address){
+  public function editAccountDetailsRecord($id, $street, $gender){
     try{
-      $statement = $this->local->prepare("UPDATE tutorial.accountdetails SET address = :address WHERE account_id = :id");
+      $statement = $this->local->prepare("UPDATE tutorial.accountdetails SET street = :street, gender = :gender WHERE account_id = :id");
       $statement->bindParam(':id', $id);
-      $statement->bindParam(':address', $address);
+      $statement->bindParam(':street', $street);
+      $statement->bindParam(':gender', $gender);
       $statement->execute();
       echo message::UPDATED_SUCCESSFULLY;
     }catch(PDOException $e){
