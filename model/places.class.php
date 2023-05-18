@@ -9,6 +9,7 @@ class places {
     $this->pwcdb = new PDO(DSNA, DBUSERA, DBPASSA);
   }
 
+  // Region select query
   public function selectRegion($id){
     try{
       $query = "SELECT * FROM region WHERE island_id = $id";
@@ -21,6 +22,7 @@ class places {
     }
   }
 
+  // Region select query
   public function selectProvince($id){
     try{
       $query = "SELECT * FROM province WHERE region_id = $id";

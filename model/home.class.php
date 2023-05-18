@@ -24,7 +24,7 @@ class home{
 //    Select all info from both tables (account and accountdetails) using join clause in sql query
     public function showall(){
         try{
-            $query = "SELECT a.id, a.name, ad.island, ad.region, ad.province, ad.city, ad.barangay, ad.street, a.status FROM tutorial.account a LEFT JOIN tutorial.accountdetails ad ON a.id = ad.account_id";
+            $query = "SELECT a.id, a.name, ad.island, ad.region, ad.province, ad.city, ad.barangay, ad.street, a.status FROM tutorial.account a LEFT JOIN tutorial.accountdetails ad ON a.id = ad.account_id ORDER BY a.id DESC";
             $statement = $this->localModel->query($query);
             $statement->execute();
             return $statement;
@@ -36,27 +36,27 @@ class home{
 // ----------------------------------------------------- // 
 
 //    Update query - NOTE: Kindly disregard this lines of code
-    public function selectAccount($id){
-        try{
-            $query = "SELECT name, status FROM tutorial.account WHERE id = $id";
-            $statement = $this->localModel->query($query);
-            $statement->execute();
-            return $statement;
-        }catch(PDOException $e){
-            throw $e;
-        }
-    }
+    // public function selectAccount($id){
+    //     try{
+    //         $query = "SELECT name, status FROM tutorial.account WHERE id = $id";
+    //         $statement = $this->localModel->query($query);
+    //         $statement->execute();
+    //         return $statement;
+    //     }catch(PDOException $e){
+    //         throw $e;
+    //     }
+    // }
 
-    public function selectAccountDetails($id){
-        try{
-            $query = "SELECT address FROM tutorial.accountdetails WHERE account_id = $id";
-            $statement = $this->localModel->query($query);
-            $statement->execute();
-            return $statement;
-        }catch(PDOException $e){
-            throw $e;
-        }
-    }
+    // public function selectAccountDetails($id){
+    //     try{
+    //         $query = "SELECT address FROM tutorial.accountdetails WHERE account_id = $id";
+    //         $statement = $this->localModel->query($query);
+    //         $statement->execute();
+    //         return $statement;
+    //     }catch(PDOException $e){
+    //         throw $e;
+    //     }
+    // }
 //    Update query - NOTE: Kindly disregard this lines of code
 
 // ----------------------------------------------------- // 

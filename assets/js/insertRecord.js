@@ -44,11 +44,12 @@ $(document).ready(function(){
                 },
                 success: function(res){
                     console.log(res);
+                    alert('Please enter your first and last name');
+                },
+                error: function(error) {
+                    // Handle any errors that occur during the AJAX request
+                    console.log('Error: ' + error);
                 }
-                // error: function(error) {
-                //     // Handle any errors that occur during the AJAX request
-                //     console.log('Error: ' + error);
-                // }
             })
         } else{
             // Handle the case where one or both fields are empty
