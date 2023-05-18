@@ -8,8 +8,7 @@ function editCompleteAddress(){
   // result.innerText = lnameValue;
 
   // create a regular expression to match against the user input
-  var regexCompleteAddress = /^[a-zA-Z.\s*]*$/;
-
+  var regexCompleteAddress = /^[a-zA-Z0-9\s,'-.]*$/;
   // regex for empty input by user
   var emptyInput = /\s*/;
 

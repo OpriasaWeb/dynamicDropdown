@@ -47,8 +47,6 @@ $(document).ready(function(){
 
     }
 
-   
-
     // Reload page function
     function reloadPage(){
       setTimeout(function() {
