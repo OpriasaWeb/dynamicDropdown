@@ -27,12 +27,12 @@ include (APPROOT.'/view/header.php');
         <tr>
           <th>No#</th>
           <th>Name</th>
-          <th>Island</th>
-          <th>Region</th>
+          <th>Address</th>
+          <!-- <th>Region</th>
           <th>Province</th>
           <th>City</th>
           <th>Barangay</th>
-          <th>Street</th>
+          <th>Street</th> -->
           <th>Status</th>
           <th>Action</th>
         </tr>
@@ -45,12 +45,7 @@ include (APPROOT.'/view/header.php');
 
           <th><?php echo $key + 1 ?></th>
           <td><?php echo $u['name'] ?></td>
-          <td><?php echo $u['island'] ?></td>
-          <td><?php echo $u['region'] ?></td>
-          <td><?php echo $u['province'] ?></td>
-          <td><?php echo $u['city'] ?></td>
-          <td><?php echo $u['barangay'] ?></td>
-          <td><?php echo $u['street'] ?></td>
+          <td><?php echo $u['street'] . ', ' . $u['barangay'] . ', ' . $u['city'] . ', ' . $u['province'] . ', ' . $u['region'] . ', ' . $u['island'] ?></td>
           <td><?php echo $u['status'] ?></td>
           <td>
             <button value="<?php echo $u['id']; ?>" data-id="<?php echo $u['id']; ?>" id="modalEdit" name="edit" class="postEdit btn btn-sm btn-outline-primary">Edit</button>

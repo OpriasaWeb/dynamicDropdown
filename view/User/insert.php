@@ -186,6 +186,9 @@ $local->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   <!-- Date picker -->
   <script type="text/javascript">
 
+    
+
+    
     // Prevent the bad input in names
     <?php 
         include(APPROOT.'/assets/js/lnameValidation.js'); 
@@ -238,8 +241,18 @@ $local->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     // Insert data
     <?php 
-        include(APPROOT.'/assets/js/insertRecord.js'); 
+        // include(APPROOT.'/assets/js/insertRecord.js'); 
+        include(APPROOT.'/assets/js/insertRecHash.js'); 
     ?>
+
+    // Hash minified code
+    // var md5 = require('md5');
+    // Hash minified code
+
+    // fs.readFile('insertRecHash.js', function(err, buf) {
+    //   console.log(md5(buf));
+    // });
+
     // Insert data
 
   </script>
