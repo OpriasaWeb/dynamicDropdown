@@ -1,0 +1,16 @@
+{
+  "name": "mvc_project",
+  "version": "1.0.0",
+  "description": "Exercises as Jr App Developer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jeremy Opriasa",
+  "license": "ISC",
+  "dependencies": {
+    "hashcode": "^1.0.3",
+    "md5": "^2.3.0",
+    "uglify": "^0.1.5"
+  }
+}

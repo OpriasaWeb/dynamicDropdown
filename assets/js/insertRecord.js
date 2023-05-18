@@ -1,4 +1,8 @@
 
+// Hashes
+    // md5sum <<< insertRecHash.js > insertRecHash.js
+    // sha1sum <<< insertRecHash.js > insertRecHash.js - a020534db649f03f01817bfa29833c49dfa9b8d6
+    // sha256sum <<< insertRecHash.js > insertRecHash.js
 
 //#insert
 $(document).ready(function(){
@@ -44,7 +48,7 @@ $(document).ready(function(){
                 },
                 success: function(res){
                     console.log(res);
-                    alert('Please enter your first and last name');
+                    // alert('Please enter your first and last name');
                 },
                 error: function(error) {
                     // Handle any errors that occur during the AJAX request
