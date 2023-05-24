@@ -183,23 +183,21 @@ $local->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
   <!-- Date picker -->
   <script type="text/javascript">
-
-    
-
     
     // Prevent the bad input in names
     <?php 
-        include(APPROOT.'/assets/js/lnameValidation.js'); 
+        include(APPROOT.'/assets/js-obfuscator/js/lnameValidation.js'); 
     ?>
 
     <?php 
-        include(APPROOT.'/assets/js/fnameValidation.js'); 
+        include(APPROOT.'/assets/js-obfuscator/js/fnameValidation.js'); 
     ?>
     // Prevent the bad input in names
 
     // Prevent bad input of address
     <?php 
-        include(APPROOT.'/assets/js/addressValidation.js'); 
+        // include(APPROOT.'/assets/js/addressValidation.js'); 
+        include(APPROOT.'/assets/js-obfuscator/js/addressValidation.js'); 
     ?>
     // Prevent bad input of address
 
@@ -207,7 +205,7 @@ $local->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Form button display data
     <?php 
-        include(APPROOT.'/assets/js/displayData.js'); 
+        include(APPROOT.'/assets/js-obfuscator/js/displayData.js'); 
     ?>
     // Form button display data
 
@@ -215,7 +213,7 @@ $local->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Date picker
     <?php 
-        include(APPROOT.'/assets/js/datePicker.js'); 
+        include(APPROOT.'/assets/js-obfuscator/js/datePicker.js'); 
     ?>
     // Date picker
 
@@ -223,7 +221,7 @@ $local->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Dynamic select
     <?php 
-        include(APPROOT.'/assets/js/dynamicSelect.js'); 
+        include(APPROOT.'/assets/js-obfuscator/js/dynamicSelect.js'); 
     ?>
     // Dynamic select
 
@@ -231,7 +229,7 @@ $local->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Reset required message
     <?php 
-        include(APPROOT.'/assets/js/requiredMessage.js'); 
+        include(APPROOT.'/assets/js-obfuscator/js/requiredMessage.js'); 
     ?>
     // Reset required message
 
@@ -240,7 +238,7 @@ $local->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     // Insert data
     <?php 
         // include(APPROOT.'/assets/js/insertRecord.js'); 
-        include(APPROOT.'/assets/js/insertRecHash.js'); 
+        include(APPROOT.'/assets/js-obfuscator/js/insertRecHash.js'); 
     ?>
 
     // Hash minified code
