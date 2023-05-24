@@ -26,7 +26,6 @@ $local->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 <body>
   <div class="container">
     <div class="m-5">
-    <p class="fs-4">PhilWeb exercises</p>
     <a href="http://localhost/mvc_project/index.php?module=home&action=showall" class="btn btn-success float-end">View info</a>
     </div>
   </div>
