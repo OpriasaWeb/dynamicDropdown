@@ -1,0 +1,20 @@
+
+Assign task obfuscate the js code using javascript-obfuscated (May 24, 2023)
+
+Github: https://github.com/javascript-obfuscator/javascript-obfuscator
+Website: https://www.obfuscator.io/
+
+
+1. Make sure to download nodeJS
+2. Check the node and npm version (node --version & npm --version)
+3. npm init = initialized the npm environment
+4. npm install -g javascript-obsfuscator
+5. javascript-obsfuscator <file_name> --output <obfuscated_file_name> --compact true
+  NOTE:
+    file_name = the js code that will copy to convert it into obfuscated code
+
+    --output = If the destination path is not specified with the --output option, the obfuscated file will be saved into the input file directory, with INPUT_FILE_NAME-obfuscated.js name.
+
+    obfuscated_file_name = one line of code but in obfuscated version with same functionality as before
+
+    --compact = compact code output on one line <boolean> Default: true
